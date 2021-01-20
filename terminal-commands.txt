@@ -1,0 +1,50 @@
+> &2	# redirect output to stderr
+cp -avr folder folder_backup	# make a backup copy of a directory
+curl https://ipinfo.io/ip # get your own ip, if you are behind a router
+df -h	# show free space of mounted filesystems
+du -h .inteligand-data --max-depth=0	# disc usage in the hidden ligandscout directory
+du -sh /home/davidm	# disc usage in GB of my home directory
+$( )	# execute a command and get its output
+export GMXLIB="${GMXDATA}/gromacs/top"	# work around the missing "aminoacids.dat" file
+> file.txt	# empty a file
+for x in $(ls -d ); do echo $x; done	# standard for loop
+grep -c 'pattern' file	# count the occurence of 'pattern' in file
+grep -Ev 'def|jkl' filename.txt		# grep command using -E option with a pipe between tokens in a string
+grep -v 'pattern' file	# only gives lines WITHOUT 'pattern'
+gzip -d file.gz # compresses file.gz back to file
+java -version	# printing loaded version of java
+kill -9 <pid>	# send kill command to process with process ID pid
+leave +15	# remind yourself to leave in 15 min
+ls -lth 	# list in (l)ong form, sorted by (t)ime and with (h)uman-readable file size
+module load gromacs/gromacs-4.5.3; source /software/gromacs/4.5.3/bin/GMXRC	
+module load gromacs/gromacs-5.0.4-mpi; source /software/gromacs/5.0.4/bin/GMXRC		# start gromacs newest version and set the environment variables. usually the last command could be also implemented in the ~/.bashrc, but since two versions of gromacs are installed..
+mpstat -P ALL # for cpu usage for each individual processor
+ps	# listing currently running processes
+readlink -f <file>	# get the full path for file
+realpath <foldername>	# get the full path of a file
+!!	# repeat last command
+$SCHRODINGER/desmond -JOBNAME <jobname_restarted> -restore <oldjob.cpt> -in <oldjob.cms> -gpu	# command used to restart a GPU-accelerated MD from a checkpoint file (.cpt)
+scp file.txt server2:/tmp	# copy file.txt to the /tmp directory of remote server2
+screen -S 29555.pts-0.m17 -X sessionname hmdb-screen	# rename a session without reattaching it
+screen -S 'foo' 'application' # create a new screen named 'foo' and run 'application'
+screen -wipe	# killing all dead screen sessions
+screen -X -S <screen name> quit	# kill a detached screen
+sessionname foo	# command to (re)name a screen session while in the screen AFTER pressing "CTRL + A"
+/software/desmond/2017-3/schrodinger.hosts	# the schrodinger.hosts file location for version 2017.3 of desmond (temporary folder is: /tmp)
+tar cf file.tar files	# create a tar named file.tar containing files
+tar -cvzf archive.tgz folder/ # create a tar with Gzip compression in 'verbose mode' of folder
+tar -tvxf archive.tgz # test the content of an archive
+tar xf file.tar	# extract the files from tar
+tar -xjf # extract a tar file using Bzip2
+tar -xzf archive.tgz -C /path # extract a tar file using Gzip (into 'path', which can be left out)
+uname - a 	# Kernel info
+uname -a	# show kernel information
+uptime	# show current uptime
+whatch -n 1 <command> # execute a command periodically every 1s, showing output fullscreen.
+who	# accounts logged into the computer
+whois	# showing currently logged in account
+[xyz]	# choice of characters xyz; ls [xyz]* will list all files starting with either x,y or z; [0..10] number between 0 and 1
+cat /sys/devices/virtual/dmi/id/board_{vendor,name,version}  # get motherboard info
+lscpu  # get cpu information
+dmesg | grep RAM  # get RAM info
+lspci | grep ' VGA' # Get GPU name
